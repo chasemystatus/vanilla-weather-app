@@ -51,5 +51,10 @@ form {
 }
 
 .search-form-button:hover {
-  background-color: oklch(56.6% 0.179 58.318);
+  background: linear-gradient(
+    90deg,
+    oklch(76.8% 0.189 84.429),
+    oklch(70.9% 0.188 70.08),
+    oklch(60.6% 0.179 58.318)
+  );
 }
