@@ -35,7 +35,14 @@
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   background-color: var(--green-900);
   font-family: "Roboto", sans-serif;
 }
@@ -64,14 +71,26 @@ p {
   background-color: var(--white);
   padding: 20px;
   border-radius: 15px;
-  margin: 50px auto;
+  margin: 24px auto;
   max-width: 600px;
   box-shadow: 0 20px 20px var(--shadow);
+  width: calc(100% - 32px);
+}
+
+.weather-app-container {
+  margin: 24px auto;
+  padding: 20px;
+  max-width: 600px;
+  width: calc(100% - 32px);
 }
 
 .search-form {
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 3px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }
 
 .search-form-input {
@@ -80,7 +99,7 @@ p {
   border-radius: 14px;
   line-height: 1.5;
   padding: 10px 14px;
-  width: 70%;
+  width: min(420px, 70%);
   box-shadow: 0 2px 4px var(--shadow);
   font-size: 14px;
 }
@@ -122,15 +141,14 @@ p {
   font-weight: 700;
   line-height: 1.5;
   border: 0;
-  padding: 12px 26px;
+  padding: 13px 26px;
   border-radius: 14px;
   cursor: pointer;
 
-  box-shadow: 0 6px 10px var(--shadow);
+  box-shadow: 0 2px 4px var(--shadow);
   transition: transform 120ms ease, box-shadow 120ms ease-in-out,
     filter 120ms ease-in-out;
-
-  margin-left: 5px;
+  margin-left: 0;
 }
 
 .search-form-button:hover {
@@ -146,7 +164,7 @@ p {
       var(--amber-600-hover) 100%
     );
   transform: translateY(-1px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .search-form-button:active {
@@ -157,6 +175,8 @@ p {
 .weather-app-data {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .date-time-condition {
@@ -182,13 +202,12 @@ p {
 }
 
 .weather-icon {
-  font-size: 103px; /* smaller like Meteo */
+  font-size: 103px;
   line-height: 1;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12));
   position: relative;
-  top: 2px; /* tiny nudge so it feels centered */
-  filter: grayscale(1) sepia(1) saturate(700%) hue-rotate(-5deg)
-    brightness(2.05);
+  top: 2px;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12)) grayscale(1) sepia(1)
+    saturate(700%) hue-rotate(-5deg) brightness(2.05);
 }
 
 .current-temp {
