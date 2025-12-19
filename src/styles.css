@@ -27,7 +27,7 @@ form {
 
 .search-form-input {
   background-color: #f3f3f5;
-  border: 1px solid oklch(92.4% 0.12 95.746);
+  border: 2px solid oklch(92.4% 0.12 95.746);
   border-radius: 5px;
   line-height: 1.5;
   padding: 10px;
@@ -45,9 +45,10 @@ form {
   font-weight: 600;
   line-height: 1.5;
   border: 0;
-  padding: 10px 18px;
+  padding: 11px 20px;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
 }
 
 .search-form-button:hover {
