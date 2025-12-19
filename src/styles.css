@@ -1,5 +1,49 @@
+/* 1) DEFAULTS: old-browser-safe hex tokens */
+:root {
+  /* brand green */
+  --green-900: #0d542b;
+
+  /* neutrals */
+  --white: #ffffff;
+  --gray-50: #f3f3f5; /* input bg */
+  --shadow: rgba(0, 0, 0, 0.1);
+
+  /* subtle text */
+  --gray-600: #4a5565; /* fallback for date/time/condition */
+
+  /* amber button gradient (fallback) */
+  --amber-200: #fee685; /* input border */
+  --amber-400: #ffb900;
+  --amber-500: #fe9a00;
+  --amber-600: #e17100;
+
+  /* hover gradient (fallback) */
+  --amber-400-hover: #fe9a00;
+  --amber-500-hover: #e17100;
+  --amber-600-hover: #c55f00;
+}
+
+/* 2) MODERN UPGRADE: OKLCH overrides */
+@supports (color: oklch(50% 0.1 200)) {
+  :root {
+    --amber-200: oklch(92.4% 0.12 95.746);
+
+    --amber-400: oklch(82.8% 0.189 84.429);
+    --amber-500: oklch(76.9% 0.188 70.08);
+    --amber-600: oklch(66.6% 0.179 58.318);
+
+    --amber-400-hover: oklch(76.8% 0.189 84.429);
+    --amber-500-hover: oklch(70.9% 0.188 70.08);
+    --amber-600-hover: oklch(60.6% 0.179 58.318);
+
+    --gray-600: oklch(44.615% 0.02988 257.711);
+  }
+}
+
+/* 3) ACTUAL STYLES: only use variables below */
+
 body {
-  background-color: #0d542b;
+  background-color: var(--green-900);
   font-family: "Roboto", sans-serif;
 }
 
@@ -9,7 +53,15 @@ form {
 }
 
 h1 {
-  color: #0d542b;
+  color: var(--green-900);
+}
+
+p {
+  line-height: 1.5;
+}
+
+.date-time-condition {
+  color: var(--gray-600);
 }
 
 .roboto-font {
@@ -21,17 +73,17 @@ h1 {
 }
 
 .weather-app-container {
-  background-color: white;
+  background-color: var(--white);
   padding: 20px;
   border-radius: 15px;
   margin: 50px auto;
   max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow);
 }
 
 .search-form-input {
-  background-color: #f3f3f5;
-  border: 2px solid oklch(92.4% 0.12 95.746);
+  background-color: var(--gray-50);
+  border: 2px solid var(--amber-200);
   border-radius: 5px;
   line-height: 1.5;
   padding: 10px;
@@ -41,25 +93,25 @@ h1 {
 .search-form-button {
   background: linear-gradient(
     90deg,
-    oklch(82.8% 0.189 84.429),
-    oklch(76.9% 0.188 70.08),
-    oklch(66.6% 0.179 58.318)
+    var(--amber-400),
+    var(--amber-500),
+    var(--amber-600)
   );
-  color: white;
+  color: var(--white);
   font-weight: 600;
   line-height: 1.5;
   border: 0;
   padding: 11px 20px;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  box-shadow: var(--shadow) 0px 4px 8px;
 }
 
 .search-form-button:hover {
   background: linear-gradient(
     90deg,
-    oklch(76.8% 0.189 84.429),
-    oklch(70.9% 0.188 70.08),
-    oklch(60.6% 0.179 58.318)
+    var(--amber-400-hover),
+    var(--amber-500-hover),
+    var(--amber-600-hover)
   );
 }
