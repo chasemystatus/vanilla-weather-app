@@ -8,6 +8,10 @@ form {
   text-align: center;
 }
 
+h1 {
+  color: #0d542b;
+}
+
 .roboto-font {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
