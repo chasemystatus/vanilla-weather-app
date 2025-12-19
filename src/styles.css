@@ -58,7 +58,10 @@ footer {
   color: var(--gray-600);
   font-size: 12px;
   margin-top: 30px;
+  border-top: 2px solid var(--gray-50);
+  padding-top: 17px;
 }
+
 .date-time-condition {
   color: var(--gray-600);
 }
@@ -112,8 +115,10 @@ footer {
   padding: 11px 26px;
   border-radius: 14px;
   cursor: pointer;
-  box-shadow: 0 6px 14px var(--shadow);
-  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+  box-shadow: 0 6px 15px var(--shadow);
+  transition: transform 120ms ease, box-shadow 120ms ease-in-out,
+    filter 120ms ease-in-out;
+  margin-left: 5px;
 }
 
 .search-form-button:hover {
@@ -130,7 +135,7 @@ footer {
     );
 
   transform: translateY(-1px);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.22);
 }
 
 .search-form-button:active {
