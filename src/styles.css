@@ -77,17 +77,8 @@ p {
   width: calc(100% - 32px);
 }
 
-.weather-app-container {
-  margin: 24px auto;
-  padding: 20px;
-  max-width: 600px;
-  width: calc(100% - 32px);
-}
-
 .search-form {
-  margin-top: 20px;
-  margin-bottom: 3px;
-  text-align: center;
+  margin: 20px 0 30px;
   display: flex;
   justify-content: center;
   gap: 8px;
