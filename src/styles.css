@@ -34,6 +34,7 @@
     --gray-600: oklch(44.615% 0.02988 257.711);
   }
 }
+
 body {
   background-color: var(--green-900);
   font-family: "Roboto", sans-serif;
@@ -43,15 +44,14 @@ a {
   color: var(--amber-600);
 }
 
-form {
-  margin-bottom: 30px;
-  text-align: center;
+a:hover {
+  text-decoration: underline;
 }
 
 h1 {
   color: var(--green-900);
-  font-weight: 600;
-  font-size: 38px;
+  font-weight: 700;
+  font-size: 45px;
 }
 
 p {
@@ -59,41 +59,18 @@ p {
   margin: 5px 0;
 }
 
-footer {
-  text-align: center;
-  color: var(--gray-600);
-  font-size: 12px;
-  margin-top: 30px;
-  border-top: 2px solid var(--gray-50);
-  padding-top: 17px;
-}
-
-.date-time-condition {
-  color: var(--gray-600);
-}
-
-.humidity {
-  color: var(--amber-600);
-}
-
-.wind-speed {
-  color: var(--green-900);
-}
-
-.current-icon-temp-unit {
-  font-size: 48px;
-  font-weight: 600;
-  color: var(--green-900);
-
-  margin-top: 10px;
-}
 .weather-app-container {
   background-color: var(--white);
   padding: 20px;
   border-radius: 15px;
   margin: 50px auto;
   max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.search-form {
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .search-form-input {
@@ -128,9 +105,11 @@ footer {
   padding: 11px 26px;
   border-radius: 14px;
   cursor: pointer;
+
   box-shadow: 0 6px 15px var(--shadow);
   transition: transform 120ms ease, box-shadow 120ms ease-in-out,
     filter 120ms ease-in-out;
+
   margin-left: 5px;
 }
 
@@ -152,6 +131,40 @@ footer {
 }
 
 .search-form-button:active {
-  transform: translateY(0px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  transform: translateY(0);
+  box-shadow: 0 6px 14px var(--shadow);
+}
+
+.weather-app-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-time-condition {
+  color: var(--gray-600);
+}
+
+.humidity {
+  color: var(--amber-600);
+}
+
+.wind-speed {
+  color: var(--green-900);
+}
+
+.current-icon-temp-unit {
+  display: flex;
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--green-900);
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  color: var(--gray-600);
+  font-size: 12px;
+  margin-top: 30px;
+  border-top: 2px solid var(--gray-50);
+  padding-top: 17px;
 }
