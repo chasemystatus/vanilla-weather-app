@@ -85,6 +85,11 @@ p {
   font-size: 14px;
 }
 
+.search-form-input:focus-visible,
+.search-form-button:focus-visible {
+  outline: 1px solid var(--amber-200);
+  outline-offset: 1px;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
