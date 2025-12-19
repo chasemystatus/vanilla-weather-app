@@ -85,6 +85,18 @@ p {
   font-size: 14px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .search-form-button {
   -webkit-appearance: none;
   appearance: none;
@@ -197,7 +209,7 @@ p {
 footer {
   text-align: center;
   color: var(--gray-600);
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 30px;
   border-top: 2px solid var(--gray-50);
   padding-top: 17px;
