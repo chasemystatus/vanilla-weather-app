@@ -39,6 +39,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  color: var(--amber-600);
+}
+
 form {
   margin-bottom: 30px;
   text-align: center;
@@ -46,6 +50,8 @@ form {
 
 h1 {
   color: var(--green-900);
+  font-weight: 600;
+  font-size: 38px;
 }
 
 p {
@@ -74,6 +80,13 @@ footer {
   color: var(--green-900);
 }
 
+.current-icon-temp-unit {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--green-900);
+
+  margin-top: 10px;
+}
 .weather-app-container {
   background-color: var(--white);
   padding: 20px;
