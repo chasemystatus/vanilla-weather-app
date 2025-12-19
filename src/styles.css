@@ -52,6 +52,7 @@ h1 {
   color: var(--green-900);
   font-weight: 700;
   font-size: 45px;
+  text-shadow: 0 2px 4px var(--shadow);
 }
 
 p {
@@ -65,7 +66,7 @@ p {
   border-radius: 15px;
   margin: 50px auto;
   max-width: 600px;
-  box-shadow: 0 4px 8px var(--shadow);
+  box-shadow: 0 20px 20px var(--shadow);
 }
 
 .search-form {
@@ -80,6 +81,8 @@ p {
   line-height: 1.5;
   padding: 10px 14px;
   width: 70%;
+  box-shadow: 0 2px 4px var(--shadow);
+  font-size: 14px;
 }
 
 .search-form-button {
@@ -102,11 +105,11 @@ p {
   font-weight: 700;
   line-height: 1.5;
   border: 0;
-  padding: 11px 26px;
+  padding: 12px 26px;
   border-radius: 14px;
   cursor: pointer;
 
-  box-shadow: 0 6px 15px var(--shadow);
+  box-shadow: 0 6px 10px var(--shadow);
   transition: transform 120ms ease, box-shadow 120ms ease-in-out,
     filter 120ms ease-in-out;
 
@@ -125,7 +128,6 @@ p {
       var(--amber-500-hover) 55%,
       var(--amber-600-hover) 100%
     );
-
   transform: translateY(-1px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.22);
 }
@@ -154,10 +156,42 @@ p {
 
 .current-icon-temp-unit {
   display: flex;
-  font-size: 48px;
-  font-weight: 600;
+  align-items: center; /* keeps icon + temp nicely aligned */
+  justify-content: flex-end; /* pushes it to the right */
+  gap: 12px;
   color: var(--green-900);
   margin-top: 10px;
+  text-shadow: 0 2px 4px var(--shadow);
+}
+
+.weather-icon {
+  font-size: 103px; /* smaller like Meteo */
+  line-height: 1;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12));
+  position: relative;
+  top: 2px; /* tiny nudge so it feels centered */
+  filter: grayscale(1) sepia(1) saturate(700%) hue-rotate(-5deg)
+    brightness(2.05);
+}
+
+.current-temp {
+  display: flex;
+  align-items: flex-start; /* lets the unit sit higher */
+  line-height: 1;
+}
+
+.current-temperature {
+  font-size: 84px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.temperature-unit {
+  font-size: 26px;
+  font-weight: 700;
+  margin-left: 6px;
+  position: relative;
+  top: 10px; /* raises it (superscript vibe) */
 }
 
 footer {
