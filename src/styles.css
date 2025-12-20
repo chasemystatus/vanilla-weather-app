@@ -112,6 +112,10 @@ p {
   border: 0;
 }
 
+#city {
+  text-transform: capitalize;
+}
+
 .search-form-button {
   -webkit-appearance: none;
   appearance: none;
