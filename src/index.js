@@ -27,7 +27,10 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#city-input");
   let city = searchInput.value.trim();
 
-  if (city === "") return;
+  if (city.length < 2) {
+    alert("Please enter at least 2 letters (e.g. Paris, Tokyo).");
+    return;
+  }
 
   searchCity(city);
   searchInput.value = "";
