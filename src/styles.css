@@ -184,8 +184,8 @@ p {
 
 .current-icon-temp-unit {
   display: flex;
-  align-items: center; /* keeps icon + temp nicely aligned */
-  justify-content: flex-end; /* pushes it to the right */
+  align-items: center;
+  justify-content: flex-end;
   gap: 12px;
   color: var(--green-900);
   margin-top: 10px;
@@ -203,7 +203,7 @@ p {
 
 .current-temp {
   display: flex;
-  align-items: flex-start; /* lets the unit sit higher */
+  align-items: flex-start;
   line-height: 1;
 }
 
@@ -218,7 +218,64 @@ p {
   font-weight: 700;
   margin-left: 6px;
   position: relative;
-  top: 10px; /* raises it (superscript vibe) */
+  top: 10px;
+}
+
+/*Forecast (hidden until it has content)*/
+.forecast:empty {
+  display: none;
+}
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@media (max-width: 700px) {
+  .forecast {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .weather-app-data {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .current-icon-temp-unit {
+    justify-content: flex-start;
+  }
+}
+
+.forecast-day {
+  border: 1px solid var(--gray-50);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.forecast-date {
+  font-weight: 700;
+  color: var(--green-900);
+}
+
+.forecast-temps {
+  margin-top: 6px;
+  color: var(--gray-600);
+}
+
+.forecast-high {
+  color: var(--green-900);
+  font-weight: 700;
+}
+
+.forecast-low {
+  opacity: 0.75;
+  margin-left: 6px;
 }
 
 footer {

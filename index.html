@@ -36,28 +36,31 @@
 
             <p>
               <span class="date-time-condition">
-                <span class="date">Thursday 14:20</span>,
-                <em class="condition">clear sky</em>
+                <span class="date" id="date">Thursday 14:20</span>,
+                <em class="condition" id="condition">clear sky</em>
               </span>
               <br />
               <span class="humidity">
-                Humidity: <strong class="humidity-value">64%</strong>,
+                Humidity:
+                <strong class="humidity-value" id="humidity">64%</strong>,
               </span>
               <span class="wind-speed">
-                Wind: <strong class="wind-value">7.72</strong>
+                Wind: <strong class="wind-value" id="wind">7.72</strong>
                 <span class="wind-unit">km/h</span>
               </span>
             </p>
           </div>
 
           <div class="current-icon-temp-unit">
-            <span class="weather-icon">🌤</span>
+            <span class="weather-icon" id="icon">🌤</span>
             <div class="current-temp">
-              <span class="current-temperature">9</span>
+              <span class="current-temperature" id="temperature">9</span>
               <span class="temperature-unit">°C</span>
             </div>
           </div>
         </div>
+
+        <section class="forecast" id="forecast" aria-label="Forecast"></section>
       </main>
       <footer>
         This project was coded by
