@@ -203,10 +203,11 @@ p {
 }
 
 .weather-icon {
-  font-size: 103px;
   line-height: 1;
   position: relative;
-  top: 2px;
+  left: 22px;
+  width: 125px;
+  height: 125px;
 }
 
 .current-temp {
