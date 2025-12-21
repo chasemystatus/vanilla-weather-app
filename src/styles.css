@@ -187,6 +187,11 @@ p {
   color: var(--green-900);
 }
 
+.humidity-value,
+.wind-value {
+  font-weight: 600;
+}
+
 .current-icon-temp-unit {
   display: flex;
   align-items: center;
