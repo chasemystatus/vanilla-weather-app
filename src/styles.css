@@ -112,7 +112,6 @@ p {
   border: 0;
 }
 
-
 .search-form-button {
   -webkit-appearance: none;
   appearance: none;
@@ -234,23 +233,6 @@ p {
   margin-top: 16px;
 }
 
-@media (max-width: 700px) {
-  .forecast {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 520px) {
-  .weather-app-data {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .current-icon-temp-unit {
-    justify-content: flex-start;
-  }
-}
-
 .forecast-day {
   border: 1px solid var(--gray-50);
   border-radius: 14px;
@@ -286,4 +268,48 @@ footer {
   margin-top: 30px;
   border-top: 2px solid var(--gray-50);
   padding-top: 17px;
+}
+
+/* =========================
+   Responsive (Media Queries)
+   Keep these at the bottom
+   ========================= */
+
+@media (max-width: 700px) {
+  .forecast {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .weather-app-data {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .weather-app-data > div,
+  .current-icon-temp-unit {
+    width: 100%;
+  }
+
+  .current-icon-temp-unit {
+    justify-content: center;
+  }
+
+  .current-temp {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-form-input,
+  .search-form-button {
+    width: 100%;
+  }
 }
