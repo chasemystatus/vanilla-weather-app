@@ -35,19 +35,24 @@
           <div>
             <h1 class="city" id="city"></h1>
 
-            <p>
-              <span class="date-time-condition">
-                <span class="date" id="date">Thursday 14:20</span>,
-                <span class="condition" id="condition"></span>
-              </span>
-              <br />
+            <p class="date-time-condition">
+              <time class="day-and-time" id="day-and-time" datetime="">
+                Thursday 14:20</time
+              >,
+              <span class="condition" id="condition"></span>
+            </p>
+
+            <p class="weather-details">
               <span class="humidity">
                 Humidity:
-                <strong class="humidity-value" id="humidity"></strong>,
+                <strong class="humidity-value"
+                  ><span id="humidity"></span>%</strong
+                >,
               </span>
+
               <span class="wind-speed">
-                Wind: <strong class="wind-value" id="wind"></strong>
-                <span class="wind-unit"></span>
+                Wind:
+                <strong class="wind-value"><span id="wind"></span>mph</strong>
               </span>
             </p>
           </div>

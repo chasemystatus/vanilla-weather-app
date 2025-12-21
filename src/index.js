@@ -10,11 +10,11 @@ function refreshWeather(response) {
 
   cityElement.innerHTML = response.data.city;
   conditionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  humidityElement.innerHTML = response.data.temperature.humidity;
 
   let windMps = response.data.wind.speed;
   let windMph = windMps * 2.23694;
-  windElement.innerHTML = `${Math.round(windMph)} mph`;
+  windElement.innerHTML = Number(windMph.toPrecision(2));
 
   temperatureElement.innerHTML = Math.round(temperature);
 }
