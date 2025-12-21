@@ -203,11 +203,10 @@ p {
 }
 
 .weather-icon {
+  width: clamp(90px, 14vw, 125px);
+  height: clamp(90px, 14vw, 125px);
   line-height: 1;
-  position: relative;
-  left: 22px;
-  width: 125px;
-  height: 125px;
+  transform: translateX(22px);
 }
 
 .current-temp {
@@ -290,7 +289,7 @@ footer {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .weather-app-data {
     flex-direction: column;
     align-items: center;
@@ -308,6 +307,10 @@ footer {
 
   .current-temp {
     justify-content: center;
+  }
+
+  .weather-icon {
+    transform: translateX(0);
   }
 }
 
