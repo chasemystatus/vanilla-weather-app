@@ -207,8 +207,6 @@ p {
   line-height: 1;
   position: relative;
   top: 2px;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12)) grayscale(1) sepia(1)
-    saturate(700%) hue-rotate(-5deg) brightness(2.05);
 }
 
 .current-temp {
