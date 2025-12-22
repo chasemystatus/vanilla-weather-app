@@ -8,7 +8,12 @@ function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
 
- 
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.src = response.data.condition.icon_url;
+  iconElement.alt = response.data.condition.description;
+
+  console.log(iconElement);
 
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
