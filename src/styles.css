@@ -254,6 +254,14 @@ p {
   color: var(--green-900);
 }
 
+.forecast-icon {
+  width: 42px;
+  height: 42px;
+  display: block;
+  margin: 8px auto 0;
+  object-fit: contain; /* keeps weird icons from stretching */
+}
+
 .forecast-temps {
   margin-top: 6px;
   color: var(--gray-600);
@@ -323,5 +331,17 @@ footer {
   .search-form-input,
   .search-form-button {
     width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .forecast {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 400px) {
+    .forecast {
+      grid-template-columns: 1fr;
+    }
   }
 }
