@@ -9,16 +9,19 @@ function refreshWeather(response) {
   let temperature = response.data.temperature.current;
   let iconElement = document.querySelector("#icon");
 
-  
-
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   conditionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
+
   let windMps = response.data.wind.speed;
   let windMph = windMps * 2.23694;
   windElement.innerHTML = Number(windMph.toPrecision(2));
+
   temperatureElement.innerHTML = Math.round(temperature);
+
+  let iconUrl = response.data.condition.icon_url;
+  iconUrl = iconUrl.replace("http://", "https://");
   iconElement.src = response.data.condition.icon_url;
   iconElement.alt = response.data.condition.description;
   console.log(iconElement);
