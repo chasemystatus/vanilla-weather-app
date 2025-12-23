@@ -7,13 +7,9 @@ function refreshWeather(response) {
   let windElement = document.querySelector("#wind");
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
-
   let iconElement = document.querySelector("#icon");
 
-  iconElement.src = response.data.condition.icon_url;
-  iconElement.alt = response.data.condition.description;
-
-  console.log(iconElement);
+  
 
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
@@ -23,6 +19,9 @@ function refreshWeather(response) {
   let windMph = windMps * 2.23694;
   windElement.innerHTML = Number(windMph.toPrecision(2));
   temperatureElement.innerHTML = Math.round(temperature);
+  iconElement.src = response.data.condition.icon_url;
+  iconElement.alt = response.data.condition.description;
+  console.log(iconElement);
 }
 
 function formatDate(date) {
