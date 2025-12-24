@@ -24,7 +24,6 @@ function refreshWeather(response) {
   iconUrl = iconUrl.replace("http://", "https://");
   iconElement.src = response.data.condition.icon_url;
   iconElement.alt = response.data.condition.description;
-  console.log(iconElement);
 }
 
 function formatDate(date) {

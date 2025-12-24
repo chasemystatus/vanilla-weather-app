@@ -229,7 +229,6 @@ p {
   top: 10px;
 }
 
-/*Forecast (hidden until it has content)*/
 .forecast:empty {
   display: none;
 }
@@ -259,7 +258,10 @@ p {
   height: 42px;
   display: block;
   margin: 8px auto 0;
-  object-fit: contain; /* keeps weird icons from stretching */
+  object-fit: contain;
+  font-size: 36px;
+  line-height: 1;
+  margin-top: 8px;
 }
 
 .forecast-temps {
