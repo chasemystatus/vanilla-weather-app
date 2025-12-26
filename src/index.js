@@ -1,3 +1,8 @@
+function makeHttps(url) {
+  let safeUrl = url.replace("http:", "https:");
+  return safeUrl;
+}
+
 function refreshWeather(response) {
   let cityElement = document.querySelector("#city");
   let timeElement = document.querySelector("#day-and-time");
@@ -20,9 +25,8 @@ function refreshWeather(response) {
 
   temperatureElement.innerHTML = Math.round(temperature);
 
-  let iconUrl = response.data.condition.icon_url;
-  iconUrl = iconUrl.replace("http://", "https://");
-  iconElement.src = response.data.condition.icon_url;
+  let iconUrl = makeHttps(response.data.condition.icon_url);
+  iconElement.src = iconUrl;
   iconElement.alt = response.data.condition.description;
 }
 
