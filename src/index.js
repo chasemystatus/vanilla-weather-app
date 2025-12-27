@@ -22,7 +22,7 @@ function refreshWeather(response) {
 
   let windMps = response.data.wind.speed;
   let windMph = windMps * 2.23694;
-  windElement.innerHTML = Number(windMph.toPrecision(2));
+  windElement.innerHTML = Math.round(windMph);
 
   temperatureElement.innerHTML = Math.round(temperature);
 
@@ -78,12 +78,13 @@ function handleSearchSubmit(event) {
     return;
   }
 
-  searchCity(searchInput.value);
+  searchCity(city);
 }
 
 function getForecast(city) {
   let apiKey = "f8ac3ab5b2f666adta3f1e4o43e6107c";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  let encodedCity = encodeURIComponent(city.trim());
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${encodedCity}&key=${apiKey}&units=metric`;
 
   axios(apiUrl).then(displayForecast);
 }
