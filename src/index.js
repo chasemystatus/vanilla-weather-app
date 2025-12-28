@@ -94,20 +94,21 @@ function displayForecast(response) {
 
   let forecastHtml = "";
 
-  response.data.daily.forEach(function (day) {
-    let iconUrl = makeHttps(day.condition.icon_url);
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      let iconUrl = makeHttps(day.condition.icon_url);
 
-    forecastHtml =
-      forecastHtml +
-      `
+      forecastHtml =
+        forecastHtml +
+        `
 <div class="forecast-day">
   <div class="forecast-date">Tue</div>
 
 
   <div class="forecast-icon">
   <img class="forecast-icon-img" src="${iconUrl}" alt="${
-        day.condition.description
-      }" /></div>
+          day.condition.description
+        }" /></div>
 
   <div class="forecast-temps">
     <span class="forecast-high">
@@ -117,6 +118,7 @@ function displayForecast(response) {
   </div>
 </div>
 `;
+    }
   });
 
   let forecastElement = document.querySelector("#forecast");
