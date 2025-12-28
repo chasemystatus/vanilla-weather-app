@@ -78,10 +78,12 @@ p {
 }
 
 .search-form {
-  margin: 20px 0 30px;
+  margin: 20px 0px 8px;
   display: flex;
   justify-content: center;
   gap: 8px;
+  border-bottom: 2px solid var(--gray-50);
+  padding-bottom: 30px;
 }
 
 .search-form-input {
