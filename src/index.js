@@ -81,6 +81,13 @@ function handleSearchSubmit(event) {
   searchCity(city);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiKey = "f8ac3ab5b2f666adta3f1e4o43e6107c";
   let encodedCity = encodeURIComponent(city.trim());
@@ -90,26 +97,21 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
-
-  let forecastHtml = "";
+let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
       let iconUrl = makeHttps(day.condition.icon_url);
 
       forecastHtml =
         forecastHtml +
         `
 <div class="forecast-day">
-  <div class="forecast-date">Tue</div>
-
-
+  <div class="forecast-date">${formatDay(day.time)}</div>
   <div class="forecast-icon">
   <img class="forecast-icon-img" src="${iconUrl}" alt="${
           day.condition.description
         }" /></div>
-
   <div class="forecast-temps">
     <span class="forecast-high">
       <strong>${Math.round(day.temperature.maximum)}°</strong>
