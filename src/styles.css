@@ -298,14 +298,17 @@ footer {
   padding-top: 17px;
 }
 
-/* =========================
-   Responsive (Media Queries)
-   Keep these at the bottom
-   ========================= */
-
 @media (max-width: 700px) {
   .forecast {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(120px, 160px));
+    justify-content: center;
+  }
+
+  .forecast-day:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 160px;
+    max-width: 100%;
   }
 }
 
@@ -344,16 +347,18 @@ footer {
   .search-form-button {
     width: 100%;
   }
+}
 
-  @media (max-width: 640px) {
-    .forecast {
-      grid-template-columns: repeat(2, 1fr);
-    }
+@media (max-width: 400px) {
+  .forecast {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
   }
 
-  @media (max-width: 400px) {
-    .forecast {
-      grid-template-columns: 1fr;
-    }
+  .forecast-day:last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
+    max-width: none;
   }
 }
