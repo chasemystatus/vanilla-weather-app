@@ -206,7 +206,9 @@ p {
   width: clamp(90px, 14vw, 125px);
   height: clamp(90px, 14vw, 125px);
   line-height: 1;
-  transform: translateX(22px);
+  transform: translateX(0);
+  filter: drop-shadow(0 0px 1px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.12));
 }
 
 .current-temp {
