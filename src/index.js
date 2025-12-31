@@ -93,7 +93,12 @@ function getForecast(city) {
   let encodedCity = encodeURIComponent(city.trim());
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${encodedCity}&key=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(displayForecast);
+  axios
+    .get(apiUrl)
+    .then(displayForecast)
+    .catch(function (error) {
+      console.log("Forecast request failed:", city, error);
+    });
 }
 
 function displayForecast(response) {
